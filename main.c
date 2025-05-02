@@ -272,13 +272,8 @@ main ( int argc, char** argv )
                                         parm = argv[0];
                                 }
 
-                                if ( strcasecmp ( parm, "0" ) == 0 )
-                                        shmunit = 0;
-                                else if ( strcasecmp ( parm, "1" ) == 0 )
-                                        shmunit = 1;
-                                else if ( strcasecmp ( parm, "2" ) == 0 )
-                                        shmunit = 2;
-                                else
+                                shmunit = atoi(argv[0]);
+				if ( shmunit < 0 || shmunit > 8 )
                                         usage();
                                 break;
 
